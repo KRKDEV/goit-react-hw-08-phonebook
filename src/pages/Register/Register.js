@@ -29,11 +29,20 @@ const Register = () => {
             margin="normal"
             required
             fullWidth
+            id="username"
+            label="Username"
+            name="username"
+            autoComplete="username"
+            autoFocus
+          />
+          <TextField
+            margin="normal"
+            required
+            fullWidth
             id="email"
             label="Email Address"
             name="email"
             autoComplete="email"
-            autoFocus
           />
           <TextField
             margin="normal"
