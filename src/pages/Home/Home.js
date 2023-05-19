@@ -1,5 +1,6 @@
 import Avatar from '@mui/material/Avatar';
 import FolderIcon from '@mui/icons-material/Folder';
+import { Box } from '@mui/material';
 
 const { Container, Typography, Button } = require('@mui/material');
 
@@ -23,9 +24,19 @@ const Home = () => {
       <Typography variant="h5">
         Store all your contacts in one place!
       </Typography>
-      <Button variant="contained" color="secondary">
-        Let's go!
-      </Button>
+      <Box
+        sx={{
+          display: 'flex',
+          gap: '10px',
+        }}
+      >
+        <Button variant="contained" color="secondary">
+          Login
+        </Button>
+        <Button variant="outlined" color="secondary">
+          Register
+        </Button>
+      </Box>
     </Container>
   );
 };
