@@ -1,6 +1,9 @@
 import Avatar from '@mui/material/Avatar';
 import FolderIcon from '@mui/icons-material/Folder';
+import LoginIcon from '@mui/icons-material/Login';
+import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import { Box } from '@mui/material';
+import { Link } from 'react-router-dom';
 
 const { Container, Typography, Button } = require('@mui/material');
 
@@ -17,7 +20,7 @@ const Home = () => {
         gap: '20px',
       }}
     >
-      <Avatar color="secondary" sx={{ width: 80, height: 80 }}>
+      <Avatar sx={{ width: 80, height: 80, bgcolor: 'primary.main' }}>
         <FolderIcon sx={{ width: 50, height: 50 }} />
       </Avatar>
       <Typography variant="h3">Welcome to Phonebook</Typography>
@@ -30,10 +33,21 @@ const Home = () => {
           gap: '10px',
         }}
       >
-        <Button variant="contained" color="secondary">
-          Login
+        <Button
+          variant="contained"
+          sx={{ gap: '5px' }}
+          component={Link}
+          to="/login"
+        >
+          <LoginIcon /> Login
         </Button>
-        <Button variant="outlined" color="secondary">
+        <Button
+          sx={{ gap: '5px' }}
+          variant="outlined"
+          component={Link}
+          to="/register"
+        >
+          <AddCircleOutlineIcon />
           Register
         </Button>
       </Box>

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const Navigation = () => {
   return (
-    <AppBar position="fixed">
+    <AppBar position="fixed" color="secondary">
       <Toolbar>
         <Typography
           variant="h6"
@@ -11,7 +11,7 @@ const Navigation = () => {
           component={Link}
           to="/"
         >
-          Phonebook
+          Home
         </Typography>
         <Box
           sx={{
@@ -20,10 +20,20 @@ const Navigation = () => {
             justifyContent: 'space-between',
           }}
         >
-          <Button variant="outlined" color="secondary">
+          <Button
+            variant="outlined"
+            color="primary"
+            component={Link}
+            to="/login"
+          >
             Login
           </Button>
-          <Button variant="outlined" color="secondary">
+          <Button
+            variant="outlined"
+            color="primary"
+            component={Link}
+            to="/register"
+          >
             Register
           </Button>
         </Box>
