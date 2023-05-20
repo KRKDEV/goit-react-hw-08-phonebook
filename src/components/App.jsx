@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { Routes, Route, Navigate } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import { ThemeProvider } from '@mui/material/styles';
 import { PrivateRoute } from './PrivateRoute/PrivateRoute';
 import { RestrictedRoute } from './RestrictedRoute/RestrictedRoute';
@@ -8,6 +8,7 @@ import { refreshUser } from 'redux/auth/authOperations';
 import { useAuth } from 'hooks/useAuth';
 import theme from '../utils/palette';
 import Navigation from './Navigation/Navigation';
+import { Layout } from './Layout';
 import Home from 'pages/Home/Home';
 import Login from 'pages/Login/Login';
 import Register from 'pages/Register/Register';
@@ -25,17 +26,18 @@ export const App = () => {
     <ThemeProvider theme={theme}>
       <Navigation />
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route
-          path="/login"
-          element={
-            <RestrictedRoute redirectTo="/contacts" component={<Login />} />
-          }
-        />
+        <Route path="/" element={<Layout />} />
+        <Route index element={<Home />} />
         <Route
           path="/register"
           element={
             <RestrictedRoute redirectTo="/contacts" component={<Register />} />
+          }
+        />
+        <Route
+          path="/login"
+          element={
+            <RestrictedRoute redirectTo="/contacts" component={<Login />} />
           }
         />
         <Route
@@ -44,7 +46,7 @@ export const App = () => {
             <PrivateRoute redirectTo="/login" component={<Contacts />} />
           }
         />
-        <Route path="*" element={<Navigate to="/" />} />
+        {/* <Route path="*" element={<Navigate to="/" />} /> */}
       </Routes>
     </ThemeProvider>
   );

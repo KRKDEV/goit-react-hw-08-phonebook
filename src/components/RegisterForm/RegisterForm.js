@@ -20,7 +20,6 @@ const RegisterForm = () => {
   return (
     <Box
       component="form"
-      noValidate
       sx={{ mt: 1 }}
       onSubmit={handleSubmit}
       autoComplete="off"
@@ -29,7 +28,7 @@ const RegisterForm = () => {
         margin="normal"
         required
         fullWidth
-        id="name"
+        id="outlined-required"
         label="Username"
         type="text"
         name="name"
@@ -39,7 +38,7 @@ const RegisterForm = () => {
         margin="normal"
         required
         fullWidth
-        id="email"
+        id="outlined-required"
         label="Email Address"
         type="email"
         name="email"
@@ -51,7 +50,7 @@ const RegisterForm = () => {
         name="password"
         label="Password"
         type="password"
-        id="password"
+        id="outlined-required"
       />
       <Button type="submit" fullWidth variant="contained" sx={{ mt: 3, mb: 2 }}>
         Register
