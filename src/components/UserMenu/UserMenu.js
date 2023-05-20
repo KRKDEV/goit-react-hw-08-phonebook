@@ -13,7 +13,9 @@ const UserMenu = () => {
         type="button"
         variant="outlined"
         onClick={() => dispatch(logOut())}
-      ></Button>
+      >
+        Log out
+      </Button>
     </div>
   );
 };
