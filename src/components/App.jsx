@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import { ThemeProvider } from '@mui/material/styles';
 import { PrivateRoute } from './PrivateRoute/PrivateRoute';
 import { RestrictedRoute } from './RestrictedRoute/RestrictedRoute';
@@ -46,7 +46,7 @@ export const App = () => {
             <PrivateRoute redirectTo="/login" component={<Contacts />} />
           }
         />
-        {/* <Route path="*" element={<Navigate to="/" />} /> */}
+        <Route path="*" element={<Navigate to="/" />} />
       </Routes>
     </ThemeProvider>
   );
