@@ -2,12 +2,13 @@ import Avatar from '@mui/material/Avatar';
 import FolderIcon from '@mui/icons-material/Folder';
 import LoginIcon from '@mui/icons-material/Login';
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
-import { Box } from '@mui/material';
+import { Container, Typography, Button, Box } from '@mui/material';
 import { Link } from 'react-router-dom';
-
-const { Container, Typography, Button } = require('@mui/material');
+import { useSelector } from 'react-redux';
+import { selectIsLoggedIn } from 'redux/auth/authSelectors';
 
 const Home = () => {
+  const isLoggedIn = useSelector(selectIsLoggedIn);
   return (
     <Container
       sx={{
@@ -27,30 +28,41 @@ const Home = () => {
       <Typography variant="h5">
         Store all your contacts in one place!
       </Typography>
-      <Box
-        sx={{
-          display: 'flex',
-          gap: '10px',
-        }}
-      >
+      {isLoggedIn ? (
         <Button
           variant="contained"
           sx={{ gap: '5px' }}
           component={Link}
-          to="/login"
+          to="/contacts"
         >
-          <LoginIcon /> Login
+          My contacts
         </Button>
-        <Button
-          sx={{ gap: '5px' }}
-          variant="outlined"
-          component={Link}
-          to="/register"
+      ) : (
+        <Box
+          sx={{
+            display: 'flex',
+            gap: '10px',
+          }}
         >
-          <AddCircleOutlineIcon />
-          Register
-        </Button>
-      </Box>
+          {' '}
+          <Button
+            variant="contained"
+            component={Link}
+            to="/login"
+            startIcon={<LoginIcon />}
+          >
+            Login
+          </Button>
+          <Button
+            variant="outlined"
+            component={Link}
+            to="/register"
+            startIcon={<AddCircleOutlineIcon />}
+          >
+            Register
+          </Button>
+        </Box>
+      )}
     </Container>
   );
 };
