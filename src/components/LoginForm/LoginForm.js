@@ -16,7 +16,7 @@ const LoginForm = () => {
     form.reset();
   };
   return (
-    <Box component="form" noValidate sx={{ mt: 1 }} onSubmit={handleSubmit}>
+    <Box component="form" sx={{ mt: 1 }} onSubmit={handleSubmit}>
       <TextField
         margin="normal"
         required
