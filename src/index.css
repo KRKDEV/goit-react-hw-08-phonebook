@@ -24,9 +24,6 @@ a {
   text-decoration: none;
 }
 
-a:hover {
-  color: #e74c3c;
-}
 .active {
   color: #e74c3c;
 }

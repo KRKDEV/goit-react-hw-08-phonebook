@@ -10,6 +10,7 @@ import Home from 'pages/Home/Home';
 import Login from 'pages/Login/Login';
 import Register from 'pages/Register/Register';
 import Contacts from 'pages/Contacts/Contacts';
+import { Loader } from './Loader/Loader';
 export const App = () => {
   const dispatch = useDispatch();
   const { isRefreshing } = useAuth();
@@ -18,7 +19,7 @@ export const App = () => {
     dispatch(refreshUser());
   }, [dispatch]);
   return isRefreshing ? (
-    <p>Refreshing user...</p>
+    <Loader />
   ) : (
     <Routes>
       <Route path="/" element={<Layout />}>
