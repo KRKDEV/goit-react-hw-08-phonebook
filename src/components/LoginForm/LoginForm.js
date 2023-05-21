@@ -22,20 +22,20 @@ const LoginForm = () => {
         margin="normal"
         required
         fullWidth
-        id="email"
+        id="outlined-required"
         label="Email Address"
+        type="email"
         name="email"
-        autoComplete="email"
         autoFocus
       />
       <TextField
         margin="normal"
         required
         fullWidth
-        name="password"
+        id="outlined-required"
         label="Password"
+        name="password"
         type="password"
-        id="password"
       />
       <Button type="submit" fullWidth variant="contained" sx={{ mt: 3, mb: 2 }}>
         Sign In

@@ -33,7 +33,6 @@ const RegisterForm = () => {
         label="Username"
         type="text"
         name="name"
-        autoFocus
       />
       <TextField
         margin="normal"
@@ -48,10 +47,10 @@ const RegisterForm = () => {
         margin="normal"
         required
         fullWidth
-        name="password"
+        id="outlined-required"
         label="Password"
         type="password"
-        id="outlined-required"
+        name="password"
       />
       <Button type="submit" fullWidth variant="contained" sx={{ mt: 3, mb: 2 }}>
         Register

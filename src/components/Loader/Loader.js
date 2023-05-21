@@ -12,8 +12,8 @@ export const Loader = () => {
       }}
     >
       <Grid
-        height="40"
-        width="40"
+        height="60"
+        width="60"
         color="#f08080"
         ariaLabel="grid-loading"
         radius="12.5"

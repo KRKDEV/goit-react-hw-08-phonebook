@@ -61,7 +61,7 @@ const Contacts = () => {
               borderRadius: '5px',
             }}
           >
-            No contacts to show
+            No contacts in phonebook.
           </Box>
         )}
         {contacts.length > 0 && <ContactList />}
