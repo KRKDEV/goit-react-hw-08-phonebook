@@ -35,6 +35,7 @@ export const logIn = createAsyncThunk(
       toast.success('Sucessfully logged in');
       return response.data;
     } catch (error) {
+      toast.error('Wrong username or password');
       return thunkAPI.rejectWithValue(error.message);
     }
   }
@@ -61,6 +62,7 @@ export const refreshUser = createAsyncThunk(
     }
     try {
       setAuthHeader(persistedToken);
+
       const response = await axios.get('/users/current');
       return response.data;
     } catch (error) {
