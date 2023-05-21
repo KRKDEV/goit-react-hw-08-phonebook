@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Container, Box, Typography } from '@mui/material';
 import ContactForm from 'components/ContactForm/ContactForm';
 import ContactList from 'components/ContactList/ContactList';
+import Filter from 'components/Filter/Filter';
 
 import {
   fetchContacts,
@@ -47,6 +48,9 @@ const Contacts = () => {
         <Typography variant="h6" sx={{ marginRight: '5px' }}>
           {contacts.length}
         </Typography>
+      </Box>
+      <Box>
+        <Filter />
       </Box>
       <Box>
         {contacts.length === 0 && !isLoading && (
