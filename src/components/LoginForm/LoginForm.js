@@ -17,7 +17,12 @@ const LoginForm = () => {
     form.reset();
   };
   return (
-    <Box component="form" sx={{ mt: 1 }} onSubmit={handleSubmit}>
+    <Box
+      component="form"
+      sx={{ mt: 1 }}
+      onSubmit={handleSubmit}
+      autoComplete="off"
+    >
       <TextField
         margin="normal"
         required
